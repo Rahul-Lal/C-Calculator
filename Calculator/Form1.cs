@@ -18,6 +18,7 @@ namespace Calculator
         }
 
         double num1, num2, answer;
+        calculatingFuctions cf;
 
         int functionChoice;
         int[] functionChoices = { 1, 2, 3, 4 };
@@ -94,15 +95,34 @@ namespace Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
+            num2 = double.Parse(txtOutput.Text);
+
+            cf = new calculatingFuctions(num1, num2, answer);
+
             try
             {
-
+                if(functionChoice == 1)
+                {
+                    cf.additionFunction(num1, num2, answer);
+                }
+                else if(functionChoice == 2)
+                {
+                    cf.subtractionFunction(num1, num2, answer);
+                }
+                else if (functionChoice == 3)
+                {
+                    cf.multiplicationFunction(num1, num2, answer);
+                }
+                else
+                {
+                    cf.divisionFunction(num1, num2, answer);
+                }
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Request of " + btnEquals.Text + " is denied!" + "/n" + ex);
             }
-        }
+        } 
 
         private void btnSubtract_Click(object sender, EventArgs e)
         {
@@ -114,7 +134,7 @@ namespace Calculator
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Request of " + btnSubtract.Text + " is denied!");
+                MessageBox.Show("Request of " + btnSubtract.Text + " is denied!" + "/n" + ex);
             }
         }
 
@@ -128,7 +148,7 @@ namespace Calculator
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Request of "  + btnDivide.Text + " is denied!");
+                MessageBox.Show("Request of "  + btnDivide.Text + " is denied!" + "/n" + ex);
             }
         }
 
@@ -142,7 +162,7 @@ namespace Calculator
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Request of " + btnAddition.Text + " is denied!");
+                MessageBox.Show("Request of " + btnAddition.Text + " is denied!" + "/n" + ex);
             }
         }
 
@@ -156,7 +176,7 @@ namespace Calculator
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Request of " + btnMultiply.Text + " is denied!");
+                MessageBox.Show("Request of " + btnMultiply.Text + " is denied!" + "/n" + ex);
             }
         }
     }
