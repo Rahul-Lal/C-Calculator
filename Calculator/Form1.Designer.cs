@@ -49,10 +49,14 @@
             this.btnSubtract = new System.Windows.Forms.Button();
             this.btnAddition = new System.Windows.Forms.Button();
             this.btnEquals = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReciprocal = new System.Windows.Forms.Button();
+            this.btnExponent = new System.Windows.Forms.Button();
             this.btnSquareRoot = new System.Windows.Forms.Button();
             this.btnPi = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnModulo = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.gbxNumerals.SuspendLayout();
             this.gbxFunctions.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +70,7 @@
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(607, 57);
+            this.txtOutput.Size = new System.Drawing.Size(817, 57);
             this.txtOutput.TabIndex = 0;
             // 
             // gbxNumerals
@@ -264,6 +268,10 @@
             // 
             this.gbxFunctions.Controls.Add(this.button1);
             this.gbxFunctions.Controls.Add(this.button2);
+            this.gbxFunctions.Controls.Add(this.btnModulo);
+            this.gbxFunctions.Controls.Add(this.btnPercent);
+            this.gbxFunctions.Controls.Add(this.btnReciprocal);
+            this.gbxFunctions.Controls.Add(this.btnExponent);
             this.gbxFunctions.Controls.Add(this.btnSquareRoot);
             this.gbxFunctions.Controls.Add(this.btnPi);
             this.gbxFunctions.Controls.Add(this.btnMultiply);
@@ -346,29 +354,29 @@
             this.btnEquals.UseVisualStyleBackColor = false;
             this.btnEquals.Click += new System.EventHandler(this.btnEquals_Click);
             // 
-            // button1
+            // btnReciprocal
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(219, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnReciprocal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReciprocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnReciprocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReciprocal.Location = new System.Drawing.Point(219, 89);
+            this.btnReciprocal.Name = "btnReciprocal";
+            this.btnReciprocal.Size = new System.Drawing.Size(100, 50);
+            this.btnReciprocal.TabIndex = 15;
+            this.btnReciprocal.Text = "1/x";
+            this.btnReciprocal.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnExponent
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(325, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 50);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "÷";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnExponent.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExponent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExponent.Location = new System.Drawing.Point(325, 89);
+            this.btnExponent.Name = "btnExponent";
+            this.btnExponent.Size = new System.Drawing.Size(100, 50);
+            this.btnExponent.TabIndex = 14;
+            this.btnExponent.Text = "a^b";
+            this.btnExponent.UseVisualStyleBackColor = false;
             // 
             // btnSquareRoot
             // 
@@ -394,6 +402,55 @@
             this.btnPi.TabIndex = 12;
             this.btnPi.Text = "π";
             this.btnPi.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(219, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 50);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "1/x";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(325, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 50);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "a^b";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnModulo
+            // 
+            this.btnModulo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnModulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModulo.Location = new System.Drawing.Point(112, 35);
+            this.btnModulo.Name = "btnModulo";
+            this.btnModulo.Size = new System.Drawing.Size(100, 50);
+            this.btnModulo.TabIndex = 17;
+            this.btnModulo.Text = "mod";
+            this.btnModulo.UseVisualStyleBackColor = false;
+            // 
+            // btnPercent
+            // 
+            this.btnPercent.AllowDrop = true;
+            this.btnPercent.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPercent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPercent.Location = new System.Drawing.Point(6, 35);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(100, 50);
+            this.btnPercent.TabIndex = 16;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = false;
             // 
             // frmMain
             // 
@@ -436,10 +493,14 @@
         private System.Windows.Forms.Button btnAddition;
         private System.Windows.Forms.Button btnEquals;
         private System.Windows.Forms.Button btnDecimal;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReciprocal;
+        private System.Windows.Forms.Button btnExponent;
         private System.Windows.Forms.Button btnSquareRoot;
         private System.Windows.Forms.Button btnPi;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModulo;
+        private System.Windows.Forms.Button btnPercent;
     }
 }
 
