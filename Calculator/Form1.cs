@@ -154,6 +154,11 @@ namespace Calculator
             }
         }
 
+        private void btnDecimal_Click(object sender, EventArgs e)
+        {
+            txtOutput.Text += ".";
+        }
+
         private void btnAddition_Click(object sender, EventArgs e)
         {
             try
