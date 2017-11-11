@@ -18,12 +18,12 @@ namespace Calculator
         }
 
         double num1, num2, answer;
-        calculatingFuctions cf;
+        calculatingFuctions cf = new calculatingFuctions();
 
         int functionChoice;
         int[] functionChoices = { 1, 2, 3, 4 };
         /*
-             * functionChoice values designation
+             'functionChoice' values designation:
              * Addition = 1;
              * Subtraction = 2;
              * Multiplication = 3;
@@ -97,25 +97,27 @@ namespace Calculator
         {
             num2 = double.Parse(txtOutput.Text);
 
-            cf = new calculatingFuctions(num1, num2, answer);
-
             try
             {
                 if(functionChoice == 1)
                 {
-                    cf.additionFunction(num1, num2, answer);
+                    cf.AdditionFunction(num1, num2, answer);
+                    txtOutput.Text = cf.answers.ToString();
                 }
                 else if(functionChoice == 2)
                 {
-                    cf.subtractionFunction(num1, num2, answer);
+                    cf.SubtractionFunction(num1, num2, answer);
+                    txtOutput.Text = cf.answers.ToString();
                 }
                 else if (functionChoice == 3)
                 {
-                    cf.multiplicationFunction(num1, num2, answer);
+                    cf.MultiplicationFunction(num1, num2, answer);
+                    txtOutput.Text = cf.answers.ToString();
                 }
                 else
                 {
-                    cf.divisionFunction(num1, num2, answer);
+                    cf.DivisionFunction(num1, num2, answer);
+                    txtOutput.Text = cf.answers.ToString();
                 }
             }
             catch(Exception ex)

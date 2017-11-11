@@ -8,20 +8,15 @@ namespace Calculator
 {
     class calculatingFuctions
     {
-        double num1, num2, answers;
-
-        public calculatingFuctions( double num1, double num2, double answers)
+        public double answers;
+       
+        public void AdditionFunction( double num1, double num2, double answer)
         {
-            this.num1 = num1;
-            this.num2 = num2;
-            this.answers = answers;
-        }
 
-        public void additionFunction( double num1, double num2, double answers)
-        {
             try
             {
-                answers = num1 + num2;
+                answer = num1 + num2;
+                this.answers = answer;
             }
             catch(Exception ex)
             {
@@ -29,11 +24,12 @@ namespace Calculator
             }
         }
 
-        public void subtractionFunction( double num1, double num2, double answers)
+        public void SubtractionFunction( double num1, double num2, double answer)
         {
             try
             {
-                answers = num1 - num2;
+                answer = num1 - num2;
+                this.answers = answer;
             }
             catch (Exception ex)
             {
@@ -41,11 +37,12 @@ namespace Calculator
             }
         }
 
-        public void multiplicationFunction( double num1, double num2, double answers)
+        public void MultiplicationFunction( double num1, double num2, double answer)
         {
             try
             {
-                answers = num1 * num2;
+                answer = num1 * num2;
+                this.answers = answer;
 
             }
             catch (Exception ex)
@@ -54,11 +51,12 @@ namespace Calculator
             }
         }
 
-        public void divisionFunction( double num1, double num2, double answers)
+        public void DivisionFunction( double num1, double num2, double answer)
         {
             try
             {
-                answers = num1 / num2;
+                answer = num1 / num2;
+                this.answers = answer;
             }
             catch (Exception ex)
             {
