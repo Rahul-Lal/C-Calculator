@@ -44,12 +44,12 @@
             this.btnClearEntry = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.gbxFunctions = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFactorial = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnModulo = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
             this.btnReciprocal = new System.Windows.Forms.Button();
-            this.btnExponent = new System.Windows.Forms.Button();
+            this.btnPowerOf = new System.Windows.Forms.Button();
             this.btnSquareRoot = new System.Windows.Forms.Button();
             this.btnPi = new System.Windows.Forms.Button();
             this.btnMultiply = new System.Windows.Forms.Button();
@@ -78,7 +78,7 @@
             this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutput.Font = new System.Drawing.Font("Nirmala UI Semilight", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtOutput.Location = new System.Drawing.Point(12, 21);
+            this.txtOutput.Location = new System.Drawing.Point(12, 30);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
@@ -293,12 +293,12 @@
             // 
             // gbxFunctions
             // 
-            this.gbxFunctions.Controls.Add(this.button1);
+            this.gbxFunctions.Controls.Add(this.btnFactorial);
             this.gbxFunctions.Controls.Add(this.button2);
             this.gbxFunctions.Controls.Add(this.btnModulo);
             this.gbxFunctions.Controls.Add(this.btnPercent);
             this.gbxFunctions.Controls.Add(this.btnReciprocal);
-            this.gbxFunctions.Controls.Add(this.btnExponent);
+            this.gbxFunctions.Controls.Add(this.btnPowerOf);
             this.gbxFunctions.Controls.Add(this.btnSquareRoot);
             this.gbxFunctions.Controls.Add(this.btnPi);
             this.gbxFunctions.Controls.Add(this.btnMultiply);
@@ -317,18 +317,20 @@
             this.gbxFunctions.TabStop = false;
             this.gbxFunctions.Text = "Functions";
             // 
-            // button1
+            // btnFactorial
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Firebrick;
-            this.button1.Location = new System.Drawing.Point(226, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 19;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFactorial.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFactorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFactorial.FlatAppearance.BorderSize = 0;
+            this.btnFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactorial.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnFactorial.Location = new System.Drawing.Point(226, 19);
+            this.btnFactorial.Name = "btnFactorial";
+            this.btnFactorial.Size = new System.Drawing.Size(100, 50);
+            this.btnFactorial.TabIndex = 19;
+            this.btnFactorial.Text = "n!";
+            this.btnFactorial.UseVisualStyleBackColor = false;
+            this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
             // 
             // button2
             // 
@@ -371,6 +373,7 @@
             this.btnPercent.TabIndex = 16;
             this.btnPercent.Text = "%";
             this.btnPercent.UseVisualStyleBackColor = false;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btnReciprocal
             // 
@@ -387,19 +390,19 @@
             this.btnReciprocal.UseVisualStyleBackColor = false;
             this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
-            // btnExponent
+            // btnPowerOf
             // 
-            this.btnExponent.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExponent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExponent.FlatAppearance.BorderSize = 0;
-            this.btnExponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExponent.Location = new System.Drawing.Point(332, 73);
-            this.btnExponent.Name = "btnExponent";
-            this.btnExponent.Size = new System.Drawing.Size(100, 50);
-            this.btnExponent.TabIndex = 14;
-            this.btnExponent.Text = "a^b";
-            this.btnExponent.UseVisualStyleBackColor = false;
-            this.btnExponent.Click += new System.EventHandler(this.btnExponent_Click);
+            this.btnPowerOf.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPowerOf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPowerOf.FlatAppearance.BorderSize = 0;
+            this.btnPowerOf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPowerOf.Location = new System.Drawing.Point(332, 73);
+            this.btnPowerOf.Name = "btnPowerOf";
+            this.btnPowerOf.Size = new System.Drawing.Size(100, 50);
+            this.btnPowerOf.TabIndex = 14;
+            this.btnPowerOf.Text = "a^b";
+            this.btnPowerOf.UseVisualStyleBackColor = false;
+            this.btnPowerOf.Click += new System.EventHandler(this.btnExponent_Click);
             // 
             // btnSquareRoot
             // 
@@ -574,7 +577,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.LimeGreen;
-            this.button6.Location = new System.Drawing.Point(221, 73);
+            this.button6.Location = new System.Drawing.Point(220, 73);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 50);
             this.button6.TabIndex = 22;
@@ -674,13 +677,13 @@
         private System.Windows.Forms.Button btnEquals;
         private System.Windows.Forms.Button btnDecimal;
         private System.Windows.Forms.Button btnReciprocal;
-        private System.Windows.Forms.Button btnExponent;
+        private System.Windows.Forms.Button btnPowerOf;
         private System.Windows.Forms.Button btnSquareRoot;
         private System.Windows.Forms.Button btnPi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnModulo;
         private System.Windows.Forms.Button btnPercent;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFactorial;
         private System.Windows.Forms.GroupBox gbxTrigonometry;
         private System.Windows.Forms.Button btnTangent;
         private System.Windows.Forms.Button btnCosine;

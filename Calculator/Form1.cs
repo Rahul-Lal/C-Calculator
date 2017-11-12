@@ -190,6 +190,28 @@ namespace Calculator
             txtOutput.Text = "";
         }
 
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            num1 = double.Parse(txtOutput.Text);
+            answer = num1 / 100;
+            txtOutput.Text = answer.ToString();
+        }
+
+        private void btnFactorial_Click(object sender, EventArgs e)
+        {
+            //Link of solution help: https://stackoverflow.com/questions/16583665/for-loop-to-calculate-factorials
+
+            num1 = double.Parse(txtOutput.Text);
+            answer = num1;
+
+            for(int i = 1; i < num1; i++)
+            {
+                answer = answer * i;
+            }
+
+            txtOutput.Text = answer.ToString();
+        }
+
         private void btnAddition_Click(object sender, EventArgs e)
         {
             try
