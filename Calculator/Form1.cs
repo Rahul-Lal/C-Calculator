@@ -82,7 +82,7 @@ namespace Calculator
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            txtOutput.Text += "";
+            txtOutput.Text = "";
             num1 = 0.00;
             num2 = 0.00;
             answer = 0.00;
@@ -114,11 +114,18 @@ namespace Calculator
                     cf.MultiplicationFunction(num1, num2, answer);
                     txtOutput.Text = cf.answers.ToString();
                 }
-                else
+                else if (functionChoice == 4)
                 {
                     cf.DivisionFunction(num1, num2, answer);
                     txtOutput.Text = cf.answers.ToString();
                 }
+                else
+                {
+                    answer = Math.Pow(num1, num2);
+                    txtOutput.Text = answer.ToString();
+                }
+
+
             }
             catch(Exception ex)
             {
@@ -157,6 +164,30 @@ namespace Calculator
         private void btnDecimal_Click(object sender, EventArgs e)
         {
             txtOutput.Text += ".";
+        }
+
+        private void btnPi_Click(object sender, EventArgs e)
+        {
+            txtOutput.Text += Math.PI.ToString();
+        }
+
+        private void btnSquareRoot_Click(object sender, EventArgs e)
+        {
+            num1 = double.Parse(txtOutput.Text);
+            txtOutput.Text = Math.Sqrt(num1).ToString();
+        }
+
+        private void btnReciprocal_Click(object sender, EventArgs e)
+        {
+            num1 = double.Parse(txtOutput.Text);
+            answer = 1 / num1;
+            txtOutput.Text = answer.ToString();
+        }
+
+        private void btnExponent_Click(object sender, EventArgs e)
+        {
+            num1 = double.Parse(txtOutput.Text);
+            txtOutput.Text = "";
         }
 
         private void btnAddition_Click(object sender, EventArgs e)
