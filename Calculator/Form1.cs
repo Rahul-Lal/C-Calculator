@@ -173,8 +173,15 @@ namespace Calculator
 
         private void btnSquareRoot_Click(object sender, EventArgs e)
         {
-            num1 = double.Parse(txtOutput.Text);
-            txtOutput.Text = Math.Sqrt(num1).ToString();
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                txtOutput.Text = Math.Sqrt(num1).ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Function Error: " + ex.ToString());
+            }
         }
 
         private void btnReciprocal_Click(object sender, EventArgs e)
@@ -210,6 +217,137 @@ namespace Calculator
             }
 
             txtOutput.Text = answer.ToString();
+        }
+
+        private void mnuTrigonometry_Click(object sender, EventArgs e)
+        {
+            if(gbxCalorie.Visible == true)
+            {
+                gbxCalorie.Visible = false;
+            }
+
+            if(gbxTrigonometry.Visible == true)
+            {
+                gbxTrigonometry.Visible = false;
+            }
+            else
+            {
+                gbxTrigonometry.Visible = true;
+            }
+        }
+
+        private void btnTangent_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Tan(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnCosine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Cos(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnSine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Sin(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnAsin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Asin(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnAcos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Acos(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnAtan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = double.Parse(txtOutput.Text);
+                answer = Math.Atan(num1);
+                txtOutput.Text = answer.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Function: " + btnTangent.Name + " crashed!");
+            }
+        }
+
+        private void btnToCalories_Click(object sender, EventArgs e)
+        {
+            //Link to calorie to kilojoule conversion: http://www.health24.com/Diet-and-nutrition/Weight-loss/How-to-convert-calories-to-kilojoules-20120721
+
+            num1 = double.Parse(txtOutput.Text);
+            answer = num1 / 4.184;
+            txtOutput.Text = answer.ToString();
+        }
+
+        private void btnToKilojoules_Click(object sender, EventArgs e)
+        {
+            //Link to calorie to kilojoule conversion: http://www.health24.com/Diet-and-nutrition/Weight-loss/How-to-convert-calories-to-kilojoules-20120721
+
+            num1 = double.Parse(txtOutput.Text);
+            answer = num1 * 4.184;
+            txtOutput.Text = answer.ToString();
+        }
+
+        private void mnuCalories_Click(object sender, EventArgs e)
+        {
+            if (gbxCalorie.Visible == true)
+            {
+                gbxCalorie.Visible = false;
+            }
+            else
+            {
+                gbxCalorie.Visible = true;
+            }
         }
 
         private void btnAddition_Click(object sender, EventArgs e)

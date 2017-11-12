@@ -61,15 +61,22 @@
             this.btnTangent = new System.Windows.Forms.Button();
             this.btnCosine = new System.Windows.Forms.Button();
             this.btnSine = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAtan = new System.Windows.Forms.Button();
+            this.btnAcos = new System.Windows.Forms.Button();
+            this.btnAsin = new System.Windows.Forms.Button();
+            this.mnuMain = new System.Windows.Forms.MenuStrip();
+            this.mnuFunctions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTrigonometry = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCalories = new System.Windows.Forms.ToolStripMenuItem();
+            this.currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbxCalorie = new System.Windows.Forms.GroupBox();
+            this.btnToKilojoules = new System.Windows.Forms.Button();
+            this.btnToCalories = new System.Windows.Forms.Button();
             this.gbxNumerals.SuspendLayout();
             this.gbxFunctions.SuspendLayout();
             this.gbxTrigonometry.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.mnuMain.SuspendLayout();
+            this.gbxCalorie.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -515,9 +522,9 @@
             this.gbxTrigonometry.Controls.Add(this.btnTangent);
             this.gbxTrigonometry.Controls.Add(this.btnCosine);
             this.gbxTrigonometry.Controls.Add(this.btnSine);
-            this.gbxTrigonometry.Controls.Add(this.button6);
-            this.gbxTrigonometry.Controls.Add(this.button7);
-            this.gbxTrigonometry.Controls.Add(this.button8);
+            this.gbxTrigonometry.Controls.Add(this.btnAtan);
+            this.gbxTrigonometry.Controls.Add(this.btnAcos);
+            this.gbxTrigonometry.Controls.Add(this.btnAsin);
             this.gbxTrigonometry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxTrigonometry.ForeColor = System.Drawing.Color.LimeGreen;
             this.gbxTrigonometry.Location = new System.Drawing.Point(237, 350);
@@ -526,6 +533,7 @@
             this.gbxTrigonometry.TabIndex = 13;
             this.gbxTrigonometry.TabStop = false;
             this.gbxTrigonometry.Text = "Trigonometry";
+            this.gbxTrigonometry.Visible = false;
             // 
             // btnTangent
             // 
@@ -540,6 +548,7 @@
             this.btnTangent.TabIndex = 25;
             this.btnTangent.Text = "Tan";
             this.btnTangent.UseVisualStyleBackColor = false;
+            this.btnTangent.Click += new System.EventHandler(this.btnTangent_Click);
             // 
             // btnCosine
             // 
@@ -554,6 +563,7 @@
             this.btnCosine.TabIndex = 24;
             this.btnCosine.Text = "Cos";
             this.btnCosine.UseVisualStyleBackColor = false;
+            this.btnCosine.Click += new System.EventHandler(this.btnCosine_Click);
             // 
             // btnSine
             // 
@@ -569,85 +579,153 @@
             this.btnSine.TabIndex = 23;
             this.btnSine.Text = "Sin";
             this.btnSine.UseVisualStyleBackColor = false;
+            this.btnSine.Click += new System.EventHandler(this.btnSine_Click);
             // 
-            // button6
+            // btnAtan
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.LimeGreen;
-            this.button6.Location = new System.Drawing.Point(220, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 50);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "aTan";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnAtan.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAtan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtan.FlatAppearance.BorderSize = 0;
+            this.btnAtan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtan.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnAtan.Location = new System.Drawing.Point(220, 73);
+            this.btnAtan.Name = "btnAtan";
+            this.btnAtan.Size = new System.Drawing.Size(100, 50);
+            this.btnAtan.TabIndex = 22;
+            this.btnAtan.Text = "aTan";
+            this.btnAtan.UseVisualStyleBackColor = false;
+            this.btnAtan.Click += new System.EventHandler(this.btnAtan_Click);
             // 
-            // button7
+            // btnAcos
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.LimeGreen;
-            this.button7.Location = new System.Drawing.Point(114, 73);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 50);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "aCos";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnAcos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAcos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAcos.FlatAppearance.BorderSize = 0;
+            this.btnAcos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcos.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnAcos.Location = new System.Drawing.Point(114, 73);
+            this.btnAcos.Name = "btnAcos";
+            this.btnAcos.Size = new System.Drawing.Size(100, 50);
+            this.btnAcos.TabIndex = 21;
+            this.btnAcos.Text = "aCos";
+            this.btnAcos.UseVisualStyleBackColor = false;
+            this.btnAcos.Click += new System.EventHandler(this.btnAcos_Click);
             // 
-            // button8
+            // btnAsin
             // 
-            this.button8.AllowDrop = true;
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.LimeGreen;
-            this.button8.Location = new System.Drawing.Point(8, 73);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 50);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "aSin";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnAsin.AllowDrop = true;
+            this.btnAsin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAsin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAsin.FlatAppearance.BorderSize = 0;
+            this.btnAsin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsin.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnAsin.Location = new System.Drawing.Point(8, 73);
+            this.btnAsin.Name = "btnAsin";
+            this.btnAsin.Size = new System.Drawing.Size(100, 50);
+            this.btnAsin.TabIndex = 20;
+            this.btnAsin.Text = "aSin";
+            this.btnAsin.UseVisualStyleBackColor = false;
+            this.btnAsin.Click += new System.EventHandler(this.btnAsin_Click);
             // 
-            // menuStrip1
+            // mnuMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(808, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFunctions});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(808, 24);
+            this.mnuMain.TabIndex = 14;
+            this.mnuMain.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // mnuFunctions
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.mnuFunctions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTrigonometry,
+            this.mnuCalories,
+            this.currencyToolStripMenuItem});
+            this.mnuFunctions.Name = "mnuFunctions";
+            this.mnuFunctions.Size = new System.Drawing.Size(71, 20);
+            this.mnuFunctions.Text = "Functions";
+            // 
+            // mnuTrigonometry
+            // 
+            this.mnuTrigonometry.Name = "mnuTrigonometry";
+            this.mnuTrigonometry.Size = new System.Drawing.Size(152, 22);
+            this.mnuTrigonometry.Text = "Trigonometry";
+            this.mnuTrigonometry.Click += new System.EventHandler(this.mnuTrigonometry_Click);
+            // 
+            // mnuCalories
+            // 
+            this.mnuCalories.Name = "mnuCalories";
+            this.mnuCalories.Size = new System.Drawing.Size(152, 22);
+            this.mnuCalories.Text = "Calories";
+            this.mnuCalories.Click += new System.EventHandler(this.mnuCalories_Click);
+            // 
+            // currencyToolStripMenuItem
+            // 
+            this.currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
+            this.currencyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.currencyToolStripMenuItem.Text = "Currency";
+            // 
+            // gbxCalorie
+            // 
+            this.gbxCalorie.BackColor = System.Drawing.Color.Black;
+            this.gbxCalorie.Controls.Add(this.btnToCalories);
+            this.gbxCalorie.Controls.Add(this.btnToKilojoules);
+            this.gbxCalorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxCalorie.ForeColor = System.Drawing.Color.Gold;
+            this.gbxCalorie.Location = new System.Drawing.Point(237, 350);
+            this.gbxCalorie.Name = "gbxCalorie";
+            this.gbxCalorie.Size = new System.Drawing.Size(334, 135);
+            this.gbxCalorie.TabIndex = 15;
+            this.gbxCalorie.TabStop = false;
+            this.gbxCalorie.Text = "Calories Converter";
+            this.gbxCalorie.Visible = false;
+            // 
+            // btnToKilojoules
+            // 
+            this.btnToKilojoules.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnToKilojoules.Location = new System.Drawing.Point(49, 45);
+            this.btnToKilojoules.Name = "btnToKilojoules";
+            this.btnToKilojoules.Size = new System.Drawing.Size(100, 50);
+            this.btnToKilojoules.TabIndex = 0;
+            this.btnToKilojoules.Text = "Calories to Kilojoules";
+            this.btnToKilojoules.UseVisualStyleBackColor = false;
+            this.btnToKilojoules.Click += new System.EventHandler(this.btnToKilojoules_Click);
+            // 
+            // btnToCalories
+            // 
+            this.btnToCalories.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnToCalories.Location = new System.Drawing.Point(155, 45);
+            this.btnToCalories.Name = "btnToCalories";
+            this.btnToCalories.Size = new System.Drawing.Size(100, 50);
+            this.btnToCalories.TabIndex = 1;
+            this.btnToCalories.Text = "Kilojoules to Calories";
+            this.btnToCalories.UseVisualStyleBackColor = false;
+            this.btnToCalories.Click += new System.EventHandler(this.btnToCalories_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.MenuText;
             this.ClientSize = new System.Drawing.Size(808, 498);
+            this.Controls.Add(this.gbxCalorie);
             this.Controls.Add(this.gbxTrigonometry);
             this.Controls.Add(this.gbxFunctions);
             this.Controls.Add(this.gbxNumerals);
             this.Controls.Add(this.txtOutput);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mnuMain);
+            this.MainMenuStrip = this.mnuMain;
             this.Name = "frmMain";
             this.Text = "C# Calculator";
             this.gbxNumerals.ResumeLayout(false);
             this.gbxFunctions.ResumeLayout(false);
             this.gbxTrigonometry.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuMain.ResumeLayout(false);
+            this.mnuMain.PerformLayout();
+            this.gbxCalorie.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,11 +766,17 @@
         private System.Windows.Forms.Button btnTangent;
         private System.Windows.Forms.Button btnCosine;
         private System.Windows.Forms.Button btnSine;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.Button btnAtan;
+        private System.Windows.Forms.Button btnAcos;
+        private System.Windows.Forms.Button btnAsin;
+        private System.Windows.Forms.MenuStrip mnuMain;
+        private System.Windows.Forms.ToolStripMenuItem mnuFunctions;
+        private System.Windows.Forms.ToolStripMenuItem mnuTrigonometry;
+        private System.Windows.Forms.ToolStripMenuItem mnuCalories;
+        private System.Windows.Forms.ToolStripMenuItem currencyToolStripMenuItem;
+        private System.Windows.Forms.GroupBox gbxCalorie;
+        private System.Windows.Forms.Button btnToCalories;
+        private System.Windows.Forms.Button btnToKilojoules;
     }
 }
 
