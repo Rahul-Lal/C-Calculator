@@ -68,15 +68,22 @@
             this.mnuFunctions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTrigonometry = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCalories = new System.Windows.Forms.ToolStripMenuItem();
-            this.currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCurrency = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxCalorie = new System.Windows.Forms.GroupBox();
-            this.btnToKilojoules = new System.Windows.Forms.Button();
             this.btnToCalories = new System.Windows.Forms.Button();
+            this.btnToKilojoules = new System.Windows.Forms.Button();
+            this.gbxCurrency = new System.Windows.Forms.GroupBox();
+            this.btnCurrencyConvert = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbxNumerals.SuspendLayout();
             this.gbxFunctions.SuspendLayout();
             this.gbxTrigonometry.SuspendLayout();
             this.mnuMain.SuspendLayout();
             this.gbxCalorie.SuspendLayout();
+            this.gbxCurrency.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -642,7 +649,7 @@
             this.mnuFunctions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTrigonometry,
             this.mnuCalories,
-            this.currencyToolStripMenuItem});
+            this.mnuCurrency});
             this.mnuFunctions.Name = "mnuFunctions";
             this.mnuFunctions.Size = new System.Drawing.Size(71, 20);
             this.mnuFunctions.Text = "Functions";
@@ -650,22 +657,23 @@
             // mnuTrigonometry
             // 
             this.mnuTrigonometry.Name = "mnuTrigonometry";
-            this.mnuTrigonometry.Size = new System.Drawing.Size(152, 22);
+            this.mnuTrigonometry.Size = new System.Drawing.Size(146, 22);
             this.mnuTrigonometry.Text = "Trigonometry";
             this.mnuTrigonometry.Click += new System.EventHandler(this.mnuTrigonometry_Click);
             // 
             // mnuCalories
             // 
             this.mnuCalories.Name = "mnuCalories";
-            this.mnuCalories.Size = new System.Drawing.Size(152, 22);
+            this.mnuCalories.Size = new System.Drawing.Size(146, 22);
             this.mnuCalories.Text = "Calories";
             this.mnuCalories.Click += new System.EventHandler(this.mnuCalories_Click);
             // 
-            // currencyToolStripMenuItem
+            // mnuCurrency
             // 
-            this.currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
-            this.currencyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.currencyToolStripMenuItem.Text = "Currency";
+            this.mnuCurrency.Name = "mnuCurrency";
+            this.mnuCurrency.Size = new System.Drawing.Size(146, 22);
+            this.mnuCurrency.Text = "Currency";
+            this.mnuCurrency.Click += new System.EventHandler(this.mnuCurrency_Click);
             // 
             // gbxCalorie
             // 
@@ -682,20 +690,10 @@
             this.gbxCalorie.Text = "Calories Converter";
             this.gbxCalorie.Visible = false;
             // 
-            // btnToKilojoules
-            // 
-            this.btnToKilojoules.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnToKilojoules.Location = new System.Drawing.Point(49, 45);
-            this.btnToKilojoules.Name = "btnToKilojoules";
-            this.btnToKilojoules.Size = new System.Drawing.Size(100, 50);
-            this.btnToKilojoules.TabIndex = 0;
-            this.btnToKilojoules.Text = "Calories to Kilojoules";
-            this.btnToKilojoules.UseVisualStyleBackColor = false;
-            this.btnToKilojoules.Click += new System.EventHandler(this.btnToKilojoules_Click);
-            // 
             // btnToCalories
             // 
             this.btnToCalories.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnToCalories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToCalories.Location = new System.Drawing.Point(155, 45);
             this.btnToCalories.Name = "btnToCalories";
             this.btnToCalories.Size = new System.Drawing.Size(100, 50);
@@ -704,13 +702,88 @@
             this.btnToCalories.UseVisualStyleBackColor = false;
             this.btnToCalories.Click += new System.EventHandler(this.btnToCalories_Click);
             // 
+            // btnToKilojoules
+            // 
+            this.btnToKilojoules.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnToKilojoules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToKilojoules.Location = new System.Drawing.Point(49, 45);
+            this.btnToKilojoules.Name = "btnToKilojoules";
+            this.btnToKilojoules.Size = new System.Drawing.Size(100, 50);
+            this.btnToKilojoules.TabIndex = 0;
+            this.btnToKilojoules.Text = "Calories to Kilojoules";
+            this.btnToKilojoules.UseVisualStyleBackColor = false;
+            this.btnToKilojoules.Click += new System.EventHandler(this.btnToKilojoules_Click);
+            // 
+            // gbxCurrency
+            // 
+            this.gbxCurrency.Controls.Add(this.btnCurrencyConvert);
+            this.gbxCurrency.Controls.Add(this.label2);
+            this.gbxCurrency.Controls.Add(this.label1);
+            this.gbxCurrency.Controls.Add(this.comboBox2);
+            this.gbxCurrency.Controls.Add(this.comboBox1);
+            this.gbxCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxCurrency.ForeColor = System.Drawing.Color.DarkOrange;
+            this.gbxCurrency.Location = new System.Drawing.Point(237, 350);
+            this.gbxCurrency.Name = "gbxCurrency";
+            this.gbxCurrency.Size = new System.Drawing.Size(333, 135);
+            this.gbxCurrency.TabIndex = 15;
+            this.gbxCurrency.TabStop = false;
+            this.gbxCurrency.Text = "Currency";
+            this.gbxCurrency.Visible = false;
+            // 
+            // btnCurrencyConvert
+            // 
+            this.btnCurrencyConvert.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCurrencyConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCurrencyConvert.Location = new System.Drawing.Point(114, 79);
+            this.btnCurrencyConvert.Name = "btnCurrencyConvert";
+            this.btnCurrencyConvert.Size = new System.Drawing.Size(100, 50);
+            this.btnCurrencyConvert.TabIndex = 4;
+            this.btnCurrencyConvert.Text = "Convert";
+            this.btnCurrencyConvert.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(210, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "To:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "From:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(207, 45);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(8, 45);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(808, 498);
+            this.ClientSize = new System.Drawing.Size(808, 352);
+            this.Controls.Add(this.gbxCurrency);
             this.Controls.Add(this.gbxCalorie);
             this.Controls.Add(this.gbxTrigonometry);
             this.Controls.Add(this.gbxFunctions);
@@ -726,6 +799,8 @@
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.gbxCalorie.ResumeLayout(false);
+            this.gbxCurrency.ResumeLayout(false);
+            this.gbxCurrency.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -773,10 +848,16 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFunctions;
         private System.Windows.Forms.ToolStripMenuItem mnuTrigonometry;
         private System.Windows.Forms.ToolStripMenuItem mnuCalories;
-        private System.Windows.Forms.ToolStripMenuItem currencyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuCurrency;
         private System.Windows.Forms.GroupBox gbxCalorie;
         private System.Windows.Forms.Button btnToCalories;
         private System.Windows.Forms.Button btnToKilojoules;
+        private System.Windows.Forms.GroupBox gbxCurrency;
+        private System.Windows.Forms.Button btnCurrencyConvert;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

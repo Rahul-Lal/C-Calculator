@@ -225,14 +225,20 @@ namespace Calculator
             {
                 gbxCalorie.Visible = false;
             }
+            else if(gbxCurrency.Visible == true)
+            {
+                gbxCurrency.Visible = false;
+            }
 
-            if(gbxTrigonometry.Visible == true)
+            if (gbxTrigonometry.Visible == true)
             {
                 gbxTrigonometry.Visible = false;
+                this.Height = 391;
             }
             else
             {
                 gbxTrigonometry.Visible = true;
+                this.Height = 531;
             }
         }
 
@@ -340,14 +346,50 @@ namespace Calculator
 
         private void mnuCalories_Click(object sender, EventArgs e)
         {
+            if(gbxTrigonometry.Visible == true)
+            {
+                gbxTrigonometry.Visible = false;
+            }
+            else if (gbxCurrency.Visible == true)
+            {
+                gbxCurrency.Visible = false;
+            }
+
             if (gbxCalorie.Visible == true)
             {
                 gbxCalorie.Visible = false;
+                this.Height = 391;
             }
             else
             {
                 gbxCalorie.Visible = true;
+                this.Height = 531;
             }
+        }
+
+        private void mnuCurrency_Click(object sender, EventArgs e)
+        {
+            if(gbxTrigonometry.Visible == true)
+            {
+                gbxTrigonometry.Visible = false;
+            }
+            else if (gbxCalorie.Visible == true)
+            {
+                gbxCalorie.Visible = false;
+            }
+
+            if(gbxCurrency.Visible == true)
+            {
+                gbxCurrency.Visible = false;
+                this.Height = 391;
+            }
+            else
+            {
+                gbxCurrency.Visible = true;
+                this.Height = 531;
+            }
+
+
         }
 
         private void btnAddition_Click(object sender, EventArgs e)
