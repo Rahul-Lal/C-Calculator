@@ -392,6 +392,11 @@ namespace Calculator
 
         }
 
+        private void btnCurrencyConvert_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAddition_Click(object sender, EventArgs e)
         {
             try

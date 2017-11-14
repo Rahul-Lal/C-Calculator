@@ -76,8 +76,8 @@
             this.btnCurrencyConvert = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxToCurrency = new System.Windows.Forms.ComboBox();
+            this.cbxFromCurrency = new System.Windows.Forms.ComboBox();
             this.gbxNumerals.SuspendLayout();
             this.gbxFunctions.SuspendLayout();
             this.gbxTrigonometry.SuspendLayout();
@@ -657,21 +657,21 @@
             // mnuTrigonometry
             // 
             this.mnuTrigonometry.Name = "mnuTrigonometry";
-            this.mnuTrigonometry.Size = new System.Drawing.Size(146, 22);
+            this.mnuTrigonometry.Size = new System.Drawing.Size(152, 22);
             this.mnuTrigonometry.Text = "Trigonometry";
             this.mnuTrigonometry.Click += new System.EventHandler(this.mnuTrigonometry_Click);
             // 
             // mnuCalories
             // 
             this.mnuCalories.Name = "mnuCalories";
-            this.mnuCalories.Size = new System.Drawing.Size(146, 22);
+            this.mnuCalories.Size = new System.Drawing.Size(152, 22);
             this.mnuCalories.Text = "Calories";
             this.mnuCalories.Click += new System.EventHandler(this.mnuCalories_Click);
             // 
             // mnuCurrency
             // 
             this.mnuCurrency.Name = "mnuCurrency";
-            this.mnuCurrency.Size = new System.Drawing.Size(146, 22);
+            this.mnuCurrency.Size = new System.Drawing.Size(152, 22);
             this.mnuCurrency.Text = "Currency";
             this.mnuCurrency.Click += new System.EventHandler(this.mnuCurrency_Click);
             // 
@@ -719,8 +719,8 @@
             this.gbxCurrency.Controls.Add(this.btnCurrencyConvert);
             this.gbxCurrency.Controls.Add(this.label2);
             this.gbxCurrency.Controls.Add(this.label1);
-            this.gbxCurrency.Controls.Add(this.comboBox2);
-            this.gbxCurrency.Controls.Add(this.comboBox1);
+            this.gbxCurrency.Controls.Add(this.cbxToCurrency);
+            this.gbxCurrency.Controls.Add(this.cbxFromCurrency);
             this.gbxCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxCurrency.ForeColor = System.Drawing.Color.DarkOrange;
             this.gbxCurrency.Location = new System.Drawing.Point(237, 350);
@@ -741,11 +741,12 @@
             this.btnCurrencyConvert.TabIndex = 4;
             this.btnCurrencyConvert.Text = "Convert";
             this.btnCurrencyConvert.UseVisualStyleBackColor = false;
+            this.btnCurrencyConvert.Click += new System.EventHandler(this.btnCurrencyConvert_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 23);
+            this.label2.Location = new System.Drawing.Point(205, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -760,21 +761,50 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "From:";
             // 
-            // comboBox2
+            // cbxToCurrency
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(207, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
+            this.cbxToCurrency.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbxToCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxToCurrency.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.cbxToCurrency.FormattingEnabled = true;
+            this.cbxToCurrency.Items.AddRange(new object[] {
+            "New Zealand Dollar (NZD)",
+            "United States Dollar (USD)",
+            "Australian Dollar (AUD)",
+            "European Euro (EUR)",
+            "British Pound  (GBP)",
+            "Mexican Peso (MXN)",
+            "Indian Rupee (INR)",
+            "Japanese Yen (JPY)",
+            "UAE Dirham (AED)",
+            "Russian ruble (RUB)"});
+            this.cbxToCurrency.Location = new System.Drawing.Point(200, 45);
+            this.cbxToCurrency.Name = "cbxToCurrency";
+            this.cbxToCurrency.Size = new System.Drawing.Size(133, 21);
+            this.cbxToCurrency.TabIndex = 1;
             // 
-            // comboBox1
+            // cbxFromCurrency
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbxFromCurrency.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbxFromCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFromCurrency.DropDownWidth = 166;
+            this.cbxFromCurrency.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.cbxFromCurrency.FormattingEnabled = true;
+            this.cbxFromCurrency.Items.AddRange(new object[] {
+            "New Zealand Dollar (NZD)",
+            "United States Dollar (USD)",
+            "Australian Dollar (AUD)",
+            "European Euro (EUR)",
+            "British Pound  (GBP)",
+            "Mexican Peso (MXN)",
+            "Indian Rupee (INR)",
+            "Japanese Yen (JPY)",
+            "UAE Dirham (AED)",
+            "Russian ruble (RUB)"});
+            this.cbxFromCurrency.Location = new System.Drawing.Point(8, 45);
+            this.cbxFromCurrency.Name = "cbxFromCurrency";
+            this.cbxFromCurrency.Size = new System.Drawing.Size(133, 21);
+            this.cbxFromCurrency.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -782,7 +812,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(808, 352);
+            this.ClientSize = new System.Drawing.Size(808, 507);
             this.Controls.Add(this.gbxCurrency);
             this.Controls.Add(this.gbxCalorie);
             this.Controls.Add(this.gbxTrigonometry);
@@ -856,8 +886,8 @@
         private System.Windows.Forms.Button btnCurrencyConvert;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxToCurrency;
+        private System.Windows.Forms.ComboBox cbxFromCurrency;
     }
 }
 
