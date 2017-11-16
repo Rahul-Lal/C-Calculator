@@ -8,6 +8,7 @@ namespace Calculator
 {
     class ConvertCurrency
     {
+        // Information from link: http://www.x-rates.com/table/?from=NZD&amount=1 - Accessed on 15/11/2017, 10:11 AM
 
         string[] currencies =
         {
@@ -17,17 +18,37 @@ namespace Calculator
                 ,"British Pound  (GBP)" // 3
         };
 
-        public void ToNZD(double money, string fromCurrency, string toCurrency)
-        {
-            if(toCurrency == "New Zealand Dollar (NZD)")
-            {
-                if(fromCurrency == currencies[1])
-                {
-                    //money = money / 0.69092;
-                }
-                else
-                {
+        double USDtoNZD = 0.69092;
+        double AEDtoNZD = 2.525638;
+        double GBPtoNZD = 0.522565;
+        public double ToMoney;
 
+        //public ConvertCurrency(double currencyOne, double currencyTwo, double currencyThree)
+        //{
+
+        //}
+
+        public string[] Currencies { get => currencies; set => currencies = value; }
+
+        public void ToNZD(double fromMoney, string fromCurrency, string toCurrency)
+        {
+
+            if (toCurrency == "New Zealand Dollar (NZD)")
+            {
+                if (fromCurrency == Currencies[1])
+                {
+                    fromMoney = fromMoney / USDtoNZD;
+                    ToMoney = fromMoney;
+                }
+                else if (fromCurrency == Currencies[2])
+                {
+                    fromMoney = fromMoney / AEDtoNZD;
+                    ToMoney = fromMoney;
+                }
+                else if (fromCurrency == Currencies[3])
+                {
+                    fromMoney = fromMoney / GBPtoNZD;
+                    ToMoney = fromMoney;
                 }
             }
         }

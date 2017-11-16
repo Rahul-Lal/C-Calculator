@@ -17,8 +17,10 @@ namespace Calculator
             InitializeComponent();
         }
 
-        double num1, num2, answer;
+        double num1, num2, num3, answer;
         calculatingFuctions cf = new calculatingFuctions();
+        ConvertCurrency cc = new ConvertCurrency();
+
 
         int functionChoice;
         int[] functionChoices = { 1, 2, 3, 4 };
@@ -95,39 +97,42 @@ namespace Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            num2 = double.Parse(txtOutput.Text);
-
             try
             {
-                if(functionChoice == 1)
+                if ((num1 != num3) && (num2 != num3))
                 {
-                    cf.AdditionFunction(num1, num2, answer);
-                    txtOutput.Text = cf.answers.ToString();
-                }
-                else if(functionChoice == 2)
-                {
-                    cf.SubtractionFunction(num1, num2, answer);
-                    txtOutput.Text = cf.answers.ToString();
-                }
-                else if (functionChoice == 3)
-                {
-                    cf.MultiplicationFunction(num1, num2, answer);
-                    txtOutput.Text = cf.answers.ToString();
-                }
-                else if (functionChoice == 4)
-                {
-                    cf.DivisionFunction(num1, num2, answer);
-                    txtOutput.Text = cf.answers.ToString();
+                    
                 }
                 else
                 {
-                    answer = Math.Pow(num1, num2);
-                    txtOutput.Text = answer.ToString();
+                    num2 = double.Parse(txtOutput.Text);
+
+                    if (functionChoice == 1)
+                    {
+                        cf.AdditionFunction(num1, num2, answer);
+                    }
+                    else if (functionChoice == 2)
+                    {
+                        cf.SubtractionFunction(num1, num2, answer);
+                    }
+                    else if (functionChoice == 3)
+                    {
+                        cf.MultiplicationFunction(num1, num2, answer);
+                    }
+                    else if (functionChoice == 4)
+                    {
+                        cf.DivisionFunction(num1, num2, answer);
+                    }
+                    else
+                    {
+                        answer = Math.Pow(num1, num2);
+                        txtOutput.Text = answer.ToString();
+                    }
                 }
 
-
+                txtOutput.Text = cf.answers.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Request of " + btnEquals.Text + " is denied!" + "/n" + ex);
             }
@@ -343,7 +348,7 @@ namespace Calculator
             answer = num1 * 4.184;
             txtOutput.Text = answer.ToString();
         }
-
+        
         private void mnuCalories_Click(object sender, EventArgs e)
         {
             if(gbxTrigonometry.Visible == true)
@@ -372,13 +377,14 @@ namespace Calculator
             if(gbxTrigonometry.Visible == true)
             {
                 gbxTrigonometry.Visible = false;
+                this.Height = 531;
             }
             else if (gbxCalorie.Visible == true)
             {
                 gbxCalorie.Visible = false;
+                this.Height = 531;
             }
-
-            if(gbxCurrency.Visible == true)
+            else if (gbxCurrency.Visible == true)
             {
                 gbxCurrency.Visible = false;
                 this.Height = 391;
@@ -394,20 +400,70 @@ namespace Calculator
 
         private void btnCurrencyConvert_Click(object sender, EventArgs e)
         {
-
+            if(cbxFromCurrency.Text == "New Zealand Dollar (NZD)")
+            {
+                MessageBox.Show("Cannot convert the same currency");
+            }
+            else if(cbxFromCurrency.Text == "United States Dollar (USD)")
+            {
+                cc.ToNZD(double.Parse(txtOutput.Text), cbxFromCurrency.Text, cbxToCurrency.Text);
+                txtOutput.Text = cc.ToMoney.ToString();
+            }
+            else if (cbxFromCurrency.Text == "United Arab Emirates Dirham (AED)")
+            {
+                cc.ToNZD(double.Parse(txtOutput.Text), cbxFromCurrency.Text, cbxToCurrency.Text);
+                txtOutput.Text = cc.ToMoney.ToString();
+            }
+            else if (cbxFromCurrency.Text == "British Pound  (GBP)")
+            {
+                cc.ToNZD(double.Parse(txtOutput.Text), cbxFromCurrency.Text, cbxToCurrency.Text);
+                txtOutput.Text = cc.ToMoney.ToString();
+            }
         }
 
         private void btnAddition_Click(object sender, EventArgs e)
         {
             try
             {
-                num1 = double.Parse(txtOutput.Text);
-                txtOutput.Text = "";
-                functionChoice = 1;
+                if (num1 != num3)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+
+                    if (functionChoice == 1)
+                    {
+                        cf.AdditionFunction(num1, num2, answer);
+                        num1 = answer;
+                        functionChoice = 1;
+                    }
+                    else if (functionChoice == 2)
+                    {
+                        cf.SubtractionFunction(num1, num2, answer);
+                        num1 = answer;
+                        functionChoice = 1;
+                    }
+                    else if (functionChoice == 3)
+                    {
+                        cf.MultiplicationFunction(num1, num2, answer);
+                        num1 = answer;
+                        functionChoice = 1;
+                    }
+                    else if (functionChoice == 4)
+                    {
+                        cf.DivisionFunction(num1, num2, answer);
+                        num1 = answer;
+                        functionChoice = 1;
+                    }
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                    functionChoice = 1;
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Request of " + btnAddition.Text + " is denied!" + "/n" + ex);
+                MessageBox.Show("Request of " + btnAddition.Name + " is denied!" + "/n" + ex);
             }
         }
 

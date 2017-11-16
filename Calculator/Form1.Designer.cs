@@ -657,21 +657,21 @@
             // mnuTrigonometry
             // 
             this.mnuTrigonometry.Name = "mnuTrigonometry";
-            this.mnuTrigonometry.Size = new System.Drawing.Size(152, 22);
+            this.mnuTrigonometry.Size = new System.Drawing.Size(146, 22);
             this.mnuTrigonometry.Text = "Trigonometry";
             this.mnuTrigonometry.Click += new System.EventHandler(this.mnuTrigonometry_Click);
             // 
             // mnuCalories
             // 
             this.mnuCalories.Name = "mnuCalories";
-            this.mnuCalories.Size = new System.Drawing.Size(152, 22);
+            this.mnuCalories.Size = new System.Drawing.Size(146, 22);
             this.mnuCalories.Text = "Calories";
             this.mnuCalories.Click += new System.EventHandler(this.mnuCalories_Click);
             // 
             // mnuCurrency
             // 
             this.mnuCurrency.Name = "mnuCurrency";
-            this.mnuCurrency.Size = new System.Drawing.Size(152, 22);
+            this.mnuCurrency.Size = new System.Drawing.Size(146, 22);
             this.mnuCurrency.Text = "Currency";
             this.mnuCurrency.Click += new System.EventHandler(this.mnuCurrency_Click);
             // 
@@ -770,14 +770,8 @@
             this.cbxToCurrency.Items.AddRange(new object[] {
             "New Zealand Dollar (NZD)",
             "United States Dollar (USD)",
-            "Australian Dollar (AUD)",
-            "European Euro (EUR)",
-            "British Pound  (GBP)",
-            "Mexican Peso (MXN)",
-            "Indian Rupee (INR)",
-            "Japanese Yen (JPY)",
-            "UAE Dirham (AED)",
-            "Russian ruble (RUB)"});
+            "United Arab Emirates Dirham (AED)",
+            "British Pound  (GBP)"});
             this.cbxToCurrency.Location = new System.Drawing.Point(200, 45);
             this.cbxToCurrency.Name = "cbxToCurrency";
             this.cbxToCurrency.Size = new System.Drawing.Size(133, 21);
@@ -793,14 +787,8 @@
             this.cbxFromCurrency.Items.AddRange(new object[] {
             "New Zealand Dollar (NZD)",
             "United States Dollar (USD)",
-            "Australian Dollar (AUD)",
-            "European Euro (EUR)",
-            "British Pound  (GBP)",
-            "Mexican Peso (MXN)",
-            "Indian Rupee (INR)",
-            "Japanese Yen (JPY)",
-            "UAE Dirham (AED)",
-            "Russian ruble (RUB)"});
+            "United Arab Emirates Dirham (AED)",
+            "British Pound  (GBP)"});
             this.cbxFromCurrency.Location = new System.Drawing.Point(8, 45);
             this.cbxFromCurrency.Name = "cbxFromCurrency";
             this.cbxFromCurrency.Size = new System.Drawing.Size(133, 21);
@@ -812,7 +800,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(808, 507);
+            this.ClientSize = new System.Drawing.Size(808, 352);
             this.Controls.Add(this.gbxCurrency);
             this.Controls.Add(this.gbxCalorie);
             this.Controls.Add(this.gbxTrigonometry);
