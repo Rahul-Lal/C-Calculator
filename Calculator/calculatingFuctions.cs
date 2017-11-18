@@ -12,7 +12,6 @@ namespace Calculator
        
         public void AdditionFunction( double num1, double num2, double answer)
         {
-
             try
             {
                 answer = num1 + num2;

@@ -17,7 +17,7 @@ namespace Calculator
             InitializeComponent();
         }
 
-        double num1, num2, num3, answer;
+        double num1, num2, answer, blankVariable;
         calculatingFuctions cf = new calculatingFuctions();
         ConvertCurrency cc = new ConvertCurrency();
 
@@ -99,12 +99,6 @@ namespace Calculator
         {
             try
             {
-                if ((num1 != num3) && (num2 != num3))
-                {
-                    
-                }
-                else
-                {
                     num2 = double.Parse(txtOutput.Text);
 
                     if (functionChoice == 1)
@@ -128,7 +122,6 @@ namespace Calculator
                         answer = Math.Pow(num1, num2);
                         txtOutput.Text = answer.ToString();
                     }
-                }
 
                 txtOutput.Text = cf.answers.ToString();
             }
@@ -142,8 +135,18 @@ namespace Calculator
         {
             try
             {
-                num1 = double.Parse(txtOutput.Text);
-                txtOutput.Text = "";
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 - num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+
                 functionChoice = 2;
             }
             catch(Exception ex)
@@ -156,13 +159,26 @@ namespace Calculator
         {
             try
             {
-                num1 = double.Parse(txtOutput.Text);
-                txtOutput.Text = "";
-                functionChoice = 4;
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 * num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+                    functionChoice = 4;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Request of "  + btnDivide.Text + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
             }
         }
 
@@ -377,11 +393,13 @@ namespace Calculator
             if(gbxTrigonometry.Visible == true)
             {
                 gbxTrigonometry.Visible = false;
+                gbxCurrency.Visible = true;
                 this.Height = 531;
             }
             else if (gbxCalorie.Visible == true)
             {
                 gbxCalorie.Visible = false;
+                gbxCurrency.Visible = true;
                 this.Height = 531;
             }
             else if (gbxCurrency.Visible == true)
@@ -425,45 +443,26 @@ namespace Calculator
         {
             try
             {
-                if (num1 != num3)
+                if (num1 != blankVariable)
                 {
                     num2 = double.Parse(txtOutput.Text);
-
-                    if (functionChoice == 1)
-                    {
-                        cf.AdditionFunction(num1, num2, answer);
-                        num1 = answer;
-                        functionChoice = 1;
-                    }
-                    else if (functionChoice == 2)
-                    {
-                        cf.SubtractionFunction(num1, num2, answer);
-                        num1 = answer;
-                        functionChoice = 1;
-                    }
-                    else if (functionChoice == 3)
-                    {
-                        cf.MultiplicationFunction(num1, num2, answer);
-                        num1 = answer;
-                        functionChoice = 1;
-                    }
-                    else if (functionChoice == 4)
-                    {
-                        cf.DivisionFunction(num1, num2, answer);
-                        num1 = answer;
-                        functionChoice = 1;
-                    }
+                    num1 = num1 + num2;
+                    txtOutput.Text = "";
                 }
                 else
                 {
                     num1 = double.Parse(txtOutput.Text);
                     txtOutput.Text = "";
-                    functionChoice = 1;
                 }
+                    functionChoice = 1;
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Request of " + btnAddition.Name + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
             }
         }
 
@@ -471,13 +470,26 @@ namespace Calculator
         {
             try
             {
-                num1 = double.Parse(txtOutput.Text);
-                txtOutput.Text = "";
-                functionChoice = 3;
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 * num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+                    functionChoice = 3;
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Request of " + btnMultiply.Text + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
             }
         }
     }
