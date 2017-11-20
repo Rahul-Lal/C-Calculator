@@ -78,6 +78,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxToCurrency = new System.Windows.Forms.ComboBox();
             this.cbxFromCurrency = new System.Windows.Forms.ComboBox();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currenciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxNumerals.SuspendLayout();
             this.gbxFunctions.SuspendLayout();
             this.gbxTrigonometry.SuspendLayout();
@@ -637,7 +639,8 @@
             // mnuMain
             // 
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFunctions});
+            this.mnuFunctions,
+            this.settingsToolStripMenuItem});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Size = new System.Drawing.Size(808, 24);
@@ -657,21 +660,21 @@
             // mnuTrigonometry
             // 
             this.mnuTrigonometry.Name = "mnuTrigonometry";
-            this.mnuTrigonometry.Size = new System.Drawing.Size(146, 22);
+            this.mnuTrigonometry.Size = new System.Drawing.Size(152, 22);
             this.mnuTrigonometry.Text = "Trigonometry";
             this.mnuTrigonometry.Click += new System.EventHandler(this.mnuTrigonometry_Click);
             // 
             // mnuCalories
             // 
             this.mnuCalories.Name = "mnuCalories";
-            this.mnuCalories.Size = new System.Drawing.Size(146, 22);
+            this.mnuCalories.Size = new System.Drawing.Size(152, 22);
             this.mnuCalories.Text = "Calories";
             this.mnuCalories.Click += new System.EventHandler(this.mnuCalories_Click);
             // 
             // mnuCurrency
             // 
             this.mnuCurrency.Name = "mnuCurrency";
-            this.mnuCurrency.Size = new System.Drawing.Size(146, 22);
+            this.mnuCurrency.Size = new System.Drawing.Size(152, 22);
             this.mnuCurrency.Text = "Currency";
             this.mnuCurrency.Click += new System.EventHandler(this.mnuCurrency_Click);
             // 
@@ -794,6 +797,20 @@
             this.cbxFromCurrency.Size = new System.Drawing.Size(133, 21);
             this.cbxFromCurrency.TabIndex = 0;
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currenciesToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // currenciesToolStripMenuItem
+            // 
+            this.currenciesToolStripMenuItem.Name = "currenciesToolStripMenuItem";
+            this.currenciesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.currenciesToolStripMenuItem.Text = "Currencies";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,6 +893,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxToCurrency;
         private System.Windows.Forms.ComboBox cbxFromCurrency;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currenciesToolStripMenuItem;
     }
 }
 

@@ -390,6 +390,7 @@ namespace Calculator
 
         private void mnuCurrency_Click(object sender, EventArgs e)
         {
+
             if(gbxTrigonometry.Visible == true)
             {
                 gbxTrigonometry.Visible = false;
@@ -415,6 +416,7 @@ namespace Calculator
 
 
         }
+        
 
         private void btnCurrencyConvert_Click(object sender, EventArgs e)
         {
