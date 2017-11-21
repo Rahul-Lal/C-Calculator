@@ -23,10 +23,10 @@ namespace Calculator
         double GBPtoNZD = 0.522565;
         public double ToMoney;
 
-        public ConvertCurrency(double USDtoNZD, double AEDtoNZD, double GBPtoNZD)
-        {
+        //public ConvertCurrency(double USDtoNZD, double AEDtoNZD, double GBPtoNZD)
+        //{
 
-        }
+        //}
 
         public string[] Currencies { get => currencies; set => currencies = value; }
 
