@@ -57,11 +57,6 @@ namespace Calculator
             txtOutput.Text += "4";
         }
 
-        private void btnFive_Click(object sender, EventArgs e)
-        {
-            txtOutput.Text += "5";
-        }
-
         private void btnSix_Click(object sender, EventArgs e)
         {
             txtOutput.Text += "6";
@@ -417,7 +412,6 @@ namespace Calculator
 
         }
         
-
         private void btnCurrencyConvert_Click(object sender, EventArgs e)
         {
             if(cbxFromCurrency.Text == "New Zealand Dollar (NZD)")

@@ -25,6 +25,21 @@ namespace WpfCalculator
             InitializeComponent();
         }
 
+        double num1, num2, answer, blankVariable;
+        calculatingFuctions cf = new calculatingFuctions();
+        // ConvertCurrency cc = new ConvertCurrency();
+
+
+        int functionChoice;
+        int[] functionChoices = { 1, 2, 3, 4 };
+        /*
+             'functionChoice' values designation:
+             * Addition = 1;
+             * Subtraction = 2;
+             * Multiplication = 3;
+             * Division = 4;
+         */
+
         private void btnZero_Click(object sender, RoutedEventArgs e)
         {
             txtOutput.Text += "0";
@@ -88,6 +103,156 @@ namespace WpfCalculator
         private void btnNine_Click(object sender, RoutedEventArgs e)
         {
             txtOutput.Text += "9";
+        }
+
+        private void btnEqual_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                num2 = double.Parse(txtOutput.Text);
+
+                if (functionChoice == 1)
+                {
+                    cf.AdditionFunction(num1, num2, answer);
+                }
+                else if (functionChoice == 2)
+                {
+                    cf.SubtractionFunction(num1, num2, answer);
+                }
+                else if (functionChoice == 3)
+                {
+                    cf.MultiplicationFunction(num1, num2, answer);
+                }
+                else if (functionChoice == 4)
+                {
+                    cf.DivisionFunction(num1, num2, answer);
+                }
+                else
+                {
+                    answer = Math.Pow(num1, num2);
+                }
+
+                txtOutput.Text = cf.answers.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Request of " + btnEqual.Name + " is denied!" + "/n" + ex);
+            }
+        }
+
+        private void btnAddition_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 + num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+                functionChoice = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Request of " + btnAddition.Name + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
+            }
+        }
+
+        private void btnClearAll_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClearClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSubtraction_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 - num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+
+                functionChoice = 2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Request of " + btnSubtraction.Name + " is denied!" + "/n" + ex);
+            }
+        }
+
+        private void btnMultiplication_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 * num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+                functionChoice = 3;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Request of " + btnMultiplication.Name + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
+            }
+        }
+
+        private void btnDivison_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (num1 != blankVariable)
+                {
+                    num2 = double.Parse(txtOutput.Text);
+                    num1 = num1 * num2;
+                    txtOutput.Text = "";
+                }
+                else
+                {
+                    num1 = double.Parse(txtOutput.Text);
+                    txtOutput.Text = "";
+                }
+                functionChoice = 4;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Request of " + btnDivison.Name + " is denied!" + "/n" + ex);
+                txtOutput.Text = "";
+                num1 = blankVariable;
+                num2 = blankVariable;
+                answer = blankVariable;
+            }
         }
     }
 }

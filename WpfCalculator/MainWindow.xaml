@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator"
         mc:Ignorable="d"
-        Title="C# Calculator" Height="350" Width="666">
+        Title="C# Calculator" Height="375" Width="766">
     <Window.Resources>
         <Style TargetType="Button" x:Name="styNumerals" x:Uid="styNumerals" x:Key="styNumerals">
             <Setter Property="FontSize" Value="22.5px" />
             <Setter Property="FontFamily" Value="Segoe Print" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="Azure" />
+            <Setter Property="Foreground" Value="#FF259CFF" />
+            <!--<Setter Property="" Value="" />-->
+        </Style>
+
+        <Style TargetType="Button" x:Name="styFunction" x:Uid="styFunction" x:Key="styFunction">
+            <Setter Property="FontSize" Value="22.5px" />
+            <Setter Property="FontFamily" Value="Segoe Print" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#FFD81313" />
             <!--<Setter Property="" Value="" />-->
         </Style>
 
@@ -19,15 +27,23 @@
             <Setter Property="FontSize" Value="12.5px" />
             <Setter Property="FontFamily" Value="Segoe Print" />
             <Setter Property="Height" Value="25" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <!--<Setter Property="" Value="" />-->
+        </Style>
+
+        <Style TargetType="ComboBox" x:Name="styCboCurrency" x:Uid="styCboCurrency" x:Key="styCboCurrency">
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="25" />
+            <!--<Setter Property="" Value="" />-->
             <!--<Setter Property="" Value="" />-->
         </Style>
 
     </Window.Resources>
 
 
-    <Grid Background="Black" Margin="0,0,0,-21">
+    <Grid Background="Black" Margin="0,0,0,0">
 
-    <TextBox x:Name="txtOutput" Height="66px" Margin="30,11,30,242" HorizontalContentAlignment="Stretch" IsReadOnly="True" Background="#7F000000" Foreground="#FF0081CB" SelectionBrush="{x:Null}" FontSize="36" Text="&#xD;&#xA;" />
+        <TextBox x:Name="txtOutput" Margin="30,15,30,263" HorizontalContentAlignment="Stretch" IsReadOnly="True" Background="{x:Null}" Foreground="#FF0092C9" SelectionBrush="{x:Null}" FontSize="48" IsEnabled="False" Height="57.5" VerticalAlignment="Top" />
 
         <Grid x:Name="grdNumerals" HorizontalAlignment="Left" Height="220" Margin="30,100,0,-1" VerticalAlignment="Top" Width="267">
             <Button x:Name="btnSeven"  Style="{StaticResource styNumerals}" Content="7" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="84.75" Height="50" Click="btnSeven_Click"/>
@@ -41,8 +57,31 @@
             <Button x:Name="btnThree"  Style="{StaticResource styNumerals}" Content="3" HorizontalAlignment="Right" Margin="0,0,0,58" VerticalAlignment="Bottom" Width="84.75" Height="50" Click="btnThree_Click"/>
             <Button x:Name="btnZero"  Style="{StaticResource styNumerals}" Content="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="84.75" Height="50" Margin="0,0,0,2" Click="btnZero_Click" />
             <Button x:Name="btnDecimal"  Style="{StaticResource styNumerals}" Content="." HorizontalAlignment="Center" Margin="84,0,84,2" VerticalAlignment="Bottom" Width="84.75" Height="50" Click="btnDecimal_Click"/>
-            <Button x:Name="btnClearEntry" Style="{StaticResource styClear}" Content="CE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="84.75" Height="27" Margin="0,0,0,2" Click="btnClearEntry_Click" Background="{x:Null}" Foreground="#FF008ED1"/>
-            <Button x:Name="btnClearAll" Style="{StaticResource styClear}" Content="C" HorizontalAlignment="Right" Margin="0,0,0,29" VerticalAlignment="Bottom" Width="85" Height="23" Click="btnClearAll_Click" Background="{x:Null}" Foreground="#FF008ED1"/>
+            <Button x:Name="btnClearEntry" Style="{StaticResource styClear}" Content="CE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="84.75" Height="27" Margin="0,0,0,2" Click="btnClearEntry_Click" Background="{x:Null}" />
+            <Button x:Name="btnClearAll" Style="{StaticResource styClear}" Content="C" HorizontalAlignment="Right" Margin="0,0,0,29" VerticalAlignment="Bottom" Width="85" Height="23" Click="btnClearAll_Click" Background="{x:Null}" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="227" Margin="326,93,0,0" VerticalAlignment="Top" Width="178">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="78*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnDivison"  Style="{StaticResource styFunction}" Content="÷" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top" Width="85" Height="50" Click="btnDivison_Click" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnMultiplication"  Style="{StaticResource styFunction}" Content="x" HorizontalAlignment="Left" Margin="0,54,0,116" VerticalAlignment="Center" Width="85" Height="50" Click="btnMultiplication_Click" HorizontalContentAlignment="Center" RenderTransformOrigin="0.461,-0.102"/>
+            <Button x:Name="btnSubtraction"  Style="{StaticResource styFunction}" Content="-" HorizontalAlignment="Left" Margin="90,0,0,61" VerticalAlignment="Bottom" Width="85" Height="50" Click="btnSubtraction_Click" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnAddition"  Style="{StaticResource styFunction}" Content="+" HorizontalAlignment="Left" Margin="0,0,0,61" VerticalAlignment="Bottom" Width="85" Height="50" Click="btnAddition_Click" RenderTransformOrigin="0.895,-0.371" HorizontalContentAlignment="Center" />
+            <Button x:Name="btnEqual"  Style="{StaticResource styFunction}" Content="=" HorizontalAlignment="Right" Margin="0,0,1,5" VerticalAlignment="Bottom" Width="175" Height="50" Click="btnEqual_Click" RenderTransformOrigin="0.895,-0.371" Grid.ColumnSpan="2" Foreground="#FFFFA233" />
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="220" Margin="523,100,0,0" VerticalAlignment="Top" Width="205">
+            <Label Content="From:" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="185" Foreground="White" FontWeight="Bold" />
+            <ComboBox x:Name="cbxCurrencyFrom" x:Uid="cbxCurrencyFrom" Style="{StaticResource styCboCurrency}" Margin="10,118,10,77">
+                <ComboBoxItem  x:Name="" x:Uid="" />
+            </ComboBox>
+
+            <Label Content="To:" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="185" Foreground="White" FontWeight="Bold" />
+            <ComboBox x:Name="cbxCurrencyTo" x:Uid="cbxCurrencyFrom" Style="{StaticResource styCboCurrency}" Margin="10,43,10,152" >
+                <ComboBoxItem x:Name="cbxToNZD" x:Uid="cbxToNZD" />
+            </ComboBox>
         </Grid>
     </Grid>
 </Window>
