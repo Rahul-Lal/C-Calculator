@@ -1,0 +1,7 @@
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe.config
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.exe
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\bin\Debug\ConsoleCalculator.pdb
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.csprojAssemblyReference.cache
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.exe
+C:\Users\Rahul La\Source\Repos\Rahul-Lal\C-Calculator\ConsoleCalculator\obj\Debug\ConsoleCalculator.pdb
